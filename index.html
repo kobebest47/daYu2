@@ -1,169 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
+    <meta http-equiv="Content-Type" content="text/html;" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" Lang="zh-Hant-TW" content="永續創新科技資本管理顧問股份有限公司是由 ITIC 與大譽資本合作成立的基金管理公司，旗下的基金為永續創新能源科技投資有限合夥。此基金主要投資領域為新能源或綠能產業的供應鏈及相關產業投資，除此之外，配合政府政策，半導體產業、自動化與新能源載具之供應鏈亦為投資標的。">
+    <meta name="keywords" Lang="zh-Hant-TW" content="永續創新科技資本管理顧問,永續創新,永續創新科技,永續,創新科技,大譽資本,永續科技,可持續發展, 綠色科技, 環保技術,永續創新科技資本管理顧問股份有限公司, 科技, 資本管理, 顧問, 股份有限公司" /> 
+    <meta name="author" content="永續創新科技資本管理顧問">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="shortcut icon" href="image/ico2.ico">
+
+    <meta property="og:title" content="永續創新科技資本 | Noah GT Capital">
+    <meta property="og:description" content="永續創新科技資本管理顧問股份有限公司是由ITIC與大譽資本合作成立的基金管理公司 ，旗下的基金為永續創新能源科技投資有限合夥。此基金主要投資領域為新能源或綠能產業的供應鏈及相關產業投資，除此之外，配合政府政策，半導體產業、自動化與新能源載具之供應鏈亦為投資標的。">
+    <meta property="og:url" content="https://noahgt-capital.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://noahgt-capital.com/img/ico2.ico">
+    <link rel="canonical" href="https://noahgt-capital.com">
+
+    <title>永續創新科技資本 | Noah GT Capital</title>
+
+  <style>
+    :root{
+      --brand-green: #8cc63f;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    /* 直接顯示主內容 */
+    #pageContent { display: block; }
+
+    .navbar-wrapper { position: relative; z-index: 100; }
+
+    .navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 120px;
+      background: none;
+    }
+    .navbar::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height: 8px;
+      background: var(--brand-green);
+    }
+
+    .navbar-logo{
+      height: clamp(36px, 4vw, 60px);
+      width: auto;
+      flex-shrink: 0;
+      display:block;
+    }
+
+    .nav-titles {
+      display: flex;
+      gap: 4vw;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      align-items: center;
+    }
+    .nav-title {
+      color: #000;
+      font-size: clamp(14px, 1.2vw, 22px);
+      cursor: pointer;
+      transition: color .2s;
+      white-space: nowrap;
+      line-height: 1.2;
+      padding: 6px 2px;
+    }
+    .nav-title:hover { color: #28a745; }
+
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      left: 0; top: 100%;
+      min-width: 160px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      z-index: 200;
+      padding: 6px 0;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-item {
+      padding: 10px 16px;
+      color: #222;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, background-color .2s;
+      font-size: 16px;
+    }
+    .dropdown-item:hover { color: #28a745; background: #f7f7f7; }
+
+    .lang-search {
+      display: inline-flex;
+      align-items: center;
+      gap: 25px;
+      padding: 10px 18px;
+      border: 3px solid #cfcfcf;
+      border-radius: 999px;
+      background: #f7f7f7;
+      box-shadow: inset 0 0 0 1px #e6e6e6;
+      user-select: none;
+    }
+    .lang-search .lang-btn {
+      font-size: 16px;
+      line-height: 1;
+      color: #222;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: none;
+      border: none;
+      transition: color .15s ease, background-color .15s ease;
+    }
+    .lang-search .lang-btn:hover,
+    .lang-search .lang-btn:focus-visible {
+      color: #28a745;
+      background: #eeeeee;
+      outline: none;
+    }
+    .lang-search .lang-btn.active {
+      color: #000;
+      font-weight: 400;
+    }
+    .lang-search .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #bdbdbd;
+    }
+    .lang-search .search-btn {
+      width: 30px; height: 30px;
+      display: grid; place-items: center;
+      border-radius: 50%; cursor: pointer;
+      background: none; border: none;
+      transition: background-color .15s ease, transform .1s ease;
+    }
+    .lang-search .search-btn:hover,
+    .lang-search .search-btn:focus-visible {
+      background: #eaeaea; outline: none;
+    }
+    .lang-search .search-btn:active { transform: scale(0.96); }
+    .lang-search .search-btn svg {
+      width: 20px; height: 20px; display: block;
+      stroke: #111; stroke-width: 2.2; fill: none;
+    }
+
+    .main-content { position: relative; z-index: 0; }
+    .main-image {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      opacity: 1;
+      transition: opacity .8s ease;
+    }
+
+    /* 手機：LOGO + 漢堡 */
+    .hamburger {
+      display: none;
+      width: 40px; height: 40px;
+      border: none; background: transparent; cursor: pointer;
+      padding: 6px; border-radius: 8px;
+      position: relative;
+    }
+    .hamburger:focus-visible { outline: 2px solid #28a745; }
+    .hamburger span {
+      position: absolute; left: 6px; right: 6px;
+      height: 2px; background: #111;
+      transition: transform .2s ease, opacity .2s ease, top .2s ease, bottom .2s ease;
+    }
+    .hamburger span:nth-child(1) { top: 10px; }
+    .hamburger span:nth-child(2) { top: 19px; }
+    .hamburger span:nth-child(3) { bottom: 10px; }
+
+    /* 開啟時變 X */
+    .menu-open .hamburger span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+    .menu-open .hamburger span:nth-child(2) { opacity: 0; }
+    .menu-open .hamburger span:nth-child(3) { bottom: auto; top: 19px; transform: rotate(-45deg); }
+
+    /* 抽屜 & 背景 */
+    .mobile-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(82vw, 420px);
+      background: #fff; z-index: 1100;
+      transform: translateX(100%);
+      transition: transform .25s ease;
+      box-shadow: -8px 0 24px rgba(0,0,0,.12);
+      display: flex; flex-direction: column;
+    }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 16px; border-bottom: 1px solid #eee;
+    }
+    .close-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      border: none; background: #f2f2f2; cursor: pointer;
+    }
+    .close-btn:hover { background: #e9e9e9; }
+    .drawer-body {
+      padding: 12px 16px 24px; overflow-y: auto;
+    }
+    .drawer-link, .drawer-sublink {
+      display: block; padding: 12px 4px; font-size: 18px; color: #111; text-decoration: none; cursor: pointer;
+    }
+    .drawer-link:hover { color: #28a745; }
+    .drawer-sublink { font-size: 16px; color: #333; padding-left: 8px; }
+    .drawer-sublink:hover { color: #28a745; }
+
+    .drawer-lang { display: flex; gap: 12px; margin-top: 16px; }
+    .drawer-lang-btn {
+      flex: none; padding: 8px 14px; border-radius: 999px;
+      border: 1px solid #d9d9d9; background: #fafafa; cursor: pointer;
+    }
+    .drawer-lang-btn.active { border-color: #28a745; }
+
+    .backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,.28);
+      z-index: 1090; opacity: 0; transition: opacity .2s ease;
+    }
+
+    /* 打開狀態（在 <html> 加上 .menu-open） */
+    .menu-open .mobile-drawer { transform: translateX(0); }
+    .menu-open #backdrop { opacity: 1; }
+
+    /* Accordion（手機抽屜用） */
+    .accordion-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 4px;
+      font-size: 18px;
+      background: none;
+      border: none;
+      color: #111;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .accordion-btn:hover { color: #28a745; }
+    .accordion-caret {
+      transition: transform .2s ease;
+      margin-left: 8px;
+    }
+    .accordion-btn[aria-expanded="true"] .accordion-caret {
+      transform: rotate(180deg);
+    }
+    .accordion-panel {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .25s ease;
+      border-top: 1px dashed #e5e5e5;
+      margin-top: 4px;
+    }
+    .accordion-inner {
+      padding: 6px 0 0 0;
+    }
+
+    /* 平板 RWD */
+    @media (max-width: 1000px) {
+      .navbar { height: 90px; padding: 0 16px; }
+      .nav-titles { gap: 24px; }
+      .lang-search { padding: 8px 14px; gap: 14px; }
+      .lang-search .lang-btn { font-size: 15px; }
+      .lang-search .search-btn { width: 28px; height: 28px; }
+      .lang-search .search-btn svg { width: 18px; height: 18px; }
+    }
+
+    /* 手機 RWD（≤600px：只留 LOGO + 漢堡） */
+    @media (max-width: 600px) {
+      .navbar {
+        height: 64px; padding: 0 12px; gap: 0;
+        align-items: center;
+      }
+      .nav-titles, .lang-search { display: none !important; }
+      .navbar .navbar-logo { height: 36px; }
+      .hamburger { display: inline-block; margin-left: auto; }
+    }
+  </style>
 </head>
-<style>
-.logo-container {
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.logo-container img {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
-}
-
-@media (min-width: 1200px) {
-    .logo-container img {
-        max-width: 400px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-    .logo-container img {
-        max-width: 323px;
-    }
-}
-
-@media (max-width: 767px) {
-    .logo-container img {
-        max-width: 150px;
-    }
-}
-
-.navbar {
-    padding: 0 20px;
-    max-width: 100%;
-    margin: 30px 0px 0px 0px;
-    font-family: "Noto Sans TC", sans-serif;
-    font-weight:100;
-    font-style:normal ;
-    letter-spacing: 2.5px;
-
-}
-
-.nav-link {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    padding : 10px 30px 2px 30px!important
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-
-}
-
-.page-info {
-    width: 90%;
-    margin: 5px auto;
-    overflow: hidden;
-}
-
-.page-info img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-
-@media (min-width: 1200px) {
-    .page-info {
-        max-width: 1760px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-    .page-info {
-        max-width: 920px;
-    }
-}
-
-.navbar a{
-  color: grey;
-  transition: color 0.3s;
-  font-weight: 400;
-}
-
-
-.navbar a:hover {
-  color: rgba(31 169 31); 
-}
-
-
-</style>
 <body>
-    <div class = "logo-container" >
-        <img src="image/logo.png">
+
+<!-- 直接顯示主內容，已移除 welcome 畫面 -->
+<div id="pageContent">
+  <div class="navbar-wrapper">
+    <div class="navbar">
+      <!-- 左：公司 LOGO -->
+      <img class="navbar-logo" src="img/logo.png" alt="Noah Green Technology Capital Management" />
+
+      <!-- 中：導覽標題（桌機顯示） -->
+      <div class="nav-titles">
+        <div class="nav-title" onclick="changeImage('img/P1.png?ver=10')">公司介紹</div>
+        <div class="nav-title" onclick="changeImage('img/P2.png?ver=10')">基金特色</div>
+        <div class="nav-title" onclick="changeImage('img/P3-2.png?ver=10')">顧問團隊</div>
+        <div class="nav-title" onclick="changeImage('img/P4.png?ver=10')">投資領域</div>
+        <div class="nav-title nav-dropdown">
+          德州投資
+          <div class="dropdown-menu">
+            <div class="dropdown-item" onclick="changeImage('img/P5.png?ver=10')">關於德州</div>
+            <div class="dropdown-item" onclick="changeImage('img/P6.png?ver=10')">服務項目</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右：語言／搜尋膠囊（桌機顯示） -->
+      <div class="lang-search" role="group" aria-label="Language and search">
+        <button id="btn-en" class="lang-btn" type="button">English</button>
+        <button id="btn-zh" class="lang-btn active" type="button">繁體中文</button>
+        <button class="search-btn" type="button" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6"></circle>
+            <line x1="16" y1="16" x2="21" y2="21"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 手機：漢堡 -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class = "top-container-navbar">
-        <nav class="navbar navbar-expand-lg bg-body " s>
-            <div class="container-fluid" >
-              <a class="navbar-brand" href="#" ></a>
-              <button class="navbar-toggler justify-content-end"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse mb-max justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">公司介紹</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/fund_info.jpg')">基金特色</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/company_info.jpg')">團隊介紹</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/invest_strategy.jpg')">投資策略</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="changeImage('image/invent_field.jpg')">投資領域</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+  </div>
 
-            
-          </nav>
+  <div class="main-content">
+    <img id="mainPic" class="main-image" src="img/P1.png?ver=10" alt="Main Content" />
+  </div>
+</div>
+
+<!-- 手機抽屜式選單 -->
+<nav id="mobileMenu" class="mobile-drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <img class="navbar-logo" src="img/logo.png" alt="Noah Green Technology Capital Management" />
+    <button id="closeDrawer" class="close-btn" aria-label="Close menu">✕</button>
+  </div>
+  <div class="drawer-body">
+    <a class="drawer-link" onclick="changeImage('img/P1.png?ver=10')">公司介紹</a>
+    <a class="drawer-link" onclick="changeImage('img/P2.png?ver=10')">基金特色</a>
+    <a class="drawer-link" onclick="changeImage('img/P3-2.png?ver=10')">顧問團隊</a>
+    <a class="drawer-link" onclick="changeImage('img/P4.png?ver=10')">投資領域</a>
+
+    <!-- Accordion：德州投資 -->
+    <div class="drawer-group">
+      <button id="acc-tx" class="accordion-btn" aria-expanded="false" aria-controls="panel-tx">
+        德州投資
+        <svg class="accordion-caret" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </button>
+      <div id="panel-tx" class="accordion-panel" role="region" aria-labelledby="acc-tx">
+        <div class="accordion-inner">
+          <a class="drawer-sublink" onclick="changeImage('img/P5.png?ver=10')">關於德州</a>
+          <a class="drawer-sublink" onclick="changeImage('img/P6.png?ver=10')">服務項目</a>
+        </div>
+      </div>
     </div>
-<div class="page-info" >
-    <img id="main-image" src="image/company_info.jpg" alt="Company Info">
-</div>
-<div class="last-container" style="margin-bottom: 30px;">
 
+    <div class="drawer-lang">
+      <button id="m-en" class="drawer-lang-btn">English</button>
+      <button id="m-zh" class="drawer-lang-btn active">繁體中文</button>
+    </div>
+  </div>
+</nav>
+<div id="backdrop" class="backdrop" hidden></div>
 
-</div>
 <script>
-  function changeImage(imagePath){
-
-    $('.nav-link').attr('src',imagePath);
-        $('#main-image').fadeOut(
-            'normal',
-            function(){
-                $('#main-image').attr('src', $('.nav-link').attr('src')).fadeIn();
-            }
-        );
+  // 主圖：淡出→換圖→載入後淡入
+  function changeImage(pic) {
+    const img = document.getElementById('mainPic');
+    img.style.opacity = '0';
+    const newImg = new Image();
+    newImg.src = pic;
+    newImg.onload = function() {
+      img.src = pic;
+      requestAnimationFrame(() => { img.style.opacity = '1'; });
+    };
   }
+
+  window.onload = function() {
+    // 桌機語言切換
+    document.getElementById("btn-en").addEventListener("click", function () {
+      window.location.href = "indexEn.html";
+    });
+    document.getElementById("btn-zh").addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
+
+    // 手機抽屜選單
+    const docEl = document.documentElement;
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const closeDrawer = document.getElementById('closeDrawer');
+
+    function openMenu() {
+      docEl.classList.add('menu-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      backdrop.hidden = false;
+    }
+    function closeMenu() {
+      docEl.classList.remove('menu-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      setTimeout(() => { backdrop.hidden = true; }, 200);
+    }
+
+    hamburger.addEventListener('click', () => {
+      if (docEl.classList.contains('menu-open')) { closeMenu(); } else { openMenu(); }
+    });
+    closeDrawer.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    // 手機語言切換
+    document.getElementById('m-en').addEventListener('click', () => { window.location.href = 'indexEn.html'; });
+    document.getElementById('m-zh').addEventListener('click', () => { window.location.href = 'index.html'; });
+
+    // 手機選單點連結後自動關閉
+    mobileMenu.querySelectorAll('a, .drawer-link, .drawer-sublink').forEach(el => {
+      el.addEventListener('click', closeMenu);
+    });
+
+    // Accordion：德州投資
+    const accBtn = document.getElementById('acc-tx');
+    const panel = document.getElementById('panel-tx');
+
+    function setPanelHeight(open) {
+      if (open) {
+        panel.classList.add('open');
+        const h = panel.scrollHeight;
+        panel.style.maxHeight = h + 'px';
+      } else {
+        panel.style.maxHeight = '0';
+        panel.classList.remove('open');
+      }
+    }
+    accBtn.addEventListener('click', () => {
+      const expanded = accBtn.getAttribute('aria-expanded') === 'true';
+      accBtn.setAttribute('aria-expanded', String(!expanded));
+      setPanelHeight(!expanded);
+    });
+
+    // 預載圖片
+    [
+      'img/P1.png?ver=10','img/P2.png?ver=10','img/P3.png?ver=10','img/P4.png?ver=10',
+      'img/P5.png?ver=10','img/P6.png?ver=10',
+      'img/tx-1.png','img/tx-2.png','img/tx-3.png'
+    ].forEach(src => { const i = new Image(); i.src = src; });
+  };
 </script>
+
 </body>
 </html>
